@@ -1,0 +1,97 @@
+
+<!--begin::App Content-->
+<div class="app-content">
+	<!--begin::Container-->
+	<div class="container-fluid">
+		<div class="row ">
+			<div class="col-12 grid-margin">
+				<div class="card">
+					<div class="card-header">
+						<div class="card-tools">
+							<button type="button" class="btn btn-tool btn-success"
+								tooltip="Generate"
+								(click)="generate()"
+							>
+								<i class="mdi mdi-export"></i> Generate
+							</button>
+						</div>
+					</div>
+
+					<div class="card-body">
+						<div class="row">
+							<div class="col-12">
+								<h4>Parameters</h4>
+							</div>
+							<div class="col-6">
+								<div class="row">
+									<div class="col-6">
+										<div class="form-group">
+											<label for="symbol-name">Symbol name</label>
+											<input class="form-control" type="text" id="symbol-name"
+												[(ngModel)]="symbolName">
+										</div>
+									</div>
+									<div class="col-6">
+										<div class="form-group">
+											<label for="total-pins">Pin Count</label>
+											<input class="form-control" type="number" id="total-pins"
+												[(ngModel)]="totalPins" (ngModelChange)="updateTable()">
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-6">
+										<div class="form-group">
+											<label for="symbol-width">Symbol width</label>
+											<input class="form-control" type="number" id="symbol-width"
+												[(ngModel)]="symbolWidth">
+										</div>
+									</div>
+									<div class="col-6">
+										<div class="form-group">
+											<label for="symbol-datasheet">Datasheet</label>
+											<input class="form-control" type="text" id="symbol-datasheet"
+												[(ngModel)]="symbolDatasheet">
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-12">
+
+										<table class="table table-sm">
+											<thead>
+											<tr>
+												<th>N</th>
+												<th>Number</th>
+												<th>Name</th>
+											</tr>
+											</thead>
+											<tbody>
+											<tr *ngFor="let p of this.pins">
+												<td>{{ p.n }}</td>
+												<td><input type="text" class="form-control form-control-sm" [(ngModel)]="p.number"></td>
+												<td><input type="text" class="form-control form-control-sm" [(ngModel)]="p.name"></td>
+											</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+
+							<div class="col-6">
+								<div class="svg-container" #svgContainer></div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-12">
+								<pre>{{ output }}</pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--end::Container-->
+</div>
+<!--end::App Content-->
