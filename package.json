@@ -6,7 +6,8 @@
 		"start": "ng serve",
 		"build": "ng build",
 		"watch": "ng build --watch --configuration development",
-		"test": "ng test"
+		"test": "ng test",
+		"build-pages": "yarn build --base-href https://kaminaris.github.io/KicadSymbolGenerator/"
 	},
 	"private": true,
 	"dependencies": {
@@ -28,7 +29,7 @@
 		"zone.js": "~0.14.3"
 	},
 	"devDependencies": {
-		"@angular-devkit/build-angular": "^17.2.0",
+		"@angular-devkit/build-angular": "^17.2.2",
 		"@angular/cli": "^17.2.0",
 		"@angular/compiler-cli": "^17.2.0",
 		"@types/bootstrap": "^5",
